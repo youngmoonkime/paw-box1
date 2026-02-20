@@ -20,8 +20,8 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# CORS 설정 — paw-box 프론트엔드(localhost:3000)에서 요청 허용
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]}})
+# CORS 설정 - 외부 호스팅(Cloudflare 등) 환경에서도 접근할 수 있도록 모든 Origin 허용
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 # 설정
